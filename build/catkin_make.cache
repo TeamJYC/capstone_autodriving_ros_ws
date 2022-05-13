@@ -1,2 +1,2 @@
-willcar:ydlidar
+opencv:rf2o_laser_odometry:slam_gmapping/gmapping:slam_gmapping/slam_gmapping:willcar:ydlidar
 -DCATKIN_DEVEL_PREFIX=/home/ubuntu/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ubuntu/catkin_ws/install -G Unix Makefiles

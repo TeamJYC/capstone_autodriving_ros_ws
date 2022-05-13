@@ -131,6 +131,10 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/ubuntu/catkin_ws/build/gtest/cmake_install.cmake")
+  include("/home/ubuntu/catkin_ws/build/slam_gmapping/slam_gmapping/cmake_install.cmake")
+  include("/home/ubuntu/catkin_ws/build/opencv/cmake_install.cmake")
+  include("/home/ubuntu/catkin_ws/build/slam_gmapping/gmapping/cmake_install.cmake")
+  include("/home/ubuntu/catkin_ws/build/rf2o_laser_odometry/cmake_install.cmake")
   include("/home/ubuntu/catkin_ws/build/willcar/cmake_install.cmake")
   include("/home/ubuntu/catkin_ws/build/ydlidar/cmake_install.cmake")
 

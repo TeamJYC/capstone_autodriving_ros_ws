@@ -5,5 +5,9 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
+subdirs("slam_gmapping/slam_gmapping")
+subdirs("opencv")
+subdirs("slam_gmapping/gmapping")
+subdirs("rf2o_laser_odometry")
 subdirs("willcar")
 subdirs("ydlidar")
