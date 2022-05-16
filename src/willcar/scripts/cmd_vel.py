@@ -122,7 +122,7 @@ def subscribe_topic_message(self):
     car = YB_Pcb_Car()
 
     # Car_Run 
-    car.Car_Run(100, 100)
+    car.Car_Run(50, 50)
     time.sleep(2)
     car.Car_Stop()
 
