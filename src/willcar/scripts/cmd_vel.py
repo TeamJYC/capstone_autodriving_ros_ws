@@ -128,32 +128,41 @@ def subscribe_topic_message(data):
 
     if linear_pwm_X <= 30 and linear_pwm_X >= 10:
         linear_pwm_X = 30
+        car.Car_Run(linear_pwm_X, linear_pwm_X)
+        time.sleep(2)
+        car.Car_Stop()
 
-    
+        print("linear_pwm_X")
+        print(linear_pwm_X)
 
-    if angle_pwm <= 180 and angle_pwm >= 0 :
+    elif linear_pwm_X > 30 :
+        car.Car_Run(linear_pwm_X, linear_pwm_X)
+        time.sleep(2)
+        car.Car_Stop()
+
+        print("linear_pwm_X")
+        print(linear_pwm_X)
+        
+
+    if angle_pwm <= 180 and angle_pwm >= 30 :
         angle_pwm = 50
         car.Car_Right(angle_pwm, 0)
         time.sleep(2)
         car.Car_Stop()
 
+        print("angle_pwm")
         print(angle_pwm)
 
-    if angle_pwm >= 180 and angle_pwm <= 360 :
+    if angle_pwm >= 210 and angle_pwm <= 360 :
         angle_pwm = 50
-        car.Car_Left(angle_pwm, 0)
+        car.Car_Left(0, angle_pwm)
         time.sleep(2)
         car.Car_Stop()
 
-
+        print("angle_pwm")
         print(angle_pwm)
-    
-    print("linear_pwm_X")
-    print(linear_pwm_X)
-    car.Car_Run(linear_pwm_X, linear_pwm_X)
-    time.sleep(2)
-    car.Car_Stop()
-    
+
+   
     
     
 
