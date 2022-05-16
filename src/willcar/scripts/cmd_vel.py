@@ -5,7 +5,7 @@ import rospy
 import smbus
 import math
 import time
-from std_msgs.msg import String
+from geometry_msgs.msg import Twist
 
 class YB_Pcb_Car(object):
 
@@ -118,16 +118,19 @@ class YB_Pcb_Car(object):
         except:
             print ('Ctrl_Servo I2C error')
 
-def subscribe_topic_message(self):
+def subscribe_topic_message(data):
+    linear_pwm_X = data.linear.x * 100 # 0.5m/s = 50 pwm [Hz]
+    angle_pwm_X = data.angular.z * 100 # 0.5m/s = 50 pwm [Hz]
+
+    print("linear_pwm_X : ", linear_pwm_X)
     car = YB_Pcb_Car()
 
     # Car_Run 
-    car.Car_Run(50, 50)
-    time.sleep(2)
+    car.Car_Run(linear_pwm_X, linear_pwm_X) 
     car.Car_Stop()
 
     # Car_Back
-    #car.Car_Back(150, 150)
+    #car.Car_Back(150, 150) 
     #time.sleep(2)
     #car.Car_Stop()
 
@@ -152,8 +155,8 @@ def subscribe_topic_message(self):
     #car.Car_Stop()
 
 def listener():
-    rospy.init_node('listener', anonymous=True)
-    rospy.Subscriber('hello_world_msg', String, subscribe_topic_message)
+    rospy.init_node('cmd_vel_node', anonymous=True)
+    rospy.Subscriber('/cmd_vel', Twist, subscribe_topic_message)
     rospy.spin()
 
 if __name__ == '__main__':
