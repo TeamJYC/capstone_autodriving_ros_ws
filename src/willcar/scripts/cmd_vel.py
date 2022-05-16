@@ -123,8 +123,8 @@ class YB_Pcb_Car(object):
 def subscribe_topic_message(data):
     car = YB_Pcb_Car()
 
-    linear_pwm_X = data.linear.x * 100 # 0.5m/s = 50 pwm [Hz]
-    angle_pwm = data.angular.z*360/(2*PI)
+    linear_pwm_X = int(data.linear.x * 100) # 0.5m/s = 50 pwm [Hz]
+    angle_pwm = int(data.angular.z*360/(2*PI))
 
     if linear_pwm_X <= 30 and linear_pwm_X >= 10:
         linear_pwm_X = 30
