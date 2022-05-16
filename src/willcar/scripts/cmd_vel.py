@@ -7,6 +7,8 @@ import math
 import time
 from geometry_msgs.msg import Twist
 
+PI = 3.1415926535897
+
 class YB_Pcb_Car(object):
 
     def get_i2c_device(self, address, i2c_bus):
@@ -119,15 +121,46 @@ class YB_Pcb_Car(object):
             print ('Ctrl_Servo I2C error')
 
 def subscribe_topic_message(data):
-    linear_pwm_X = data.linear.x * 100 # 0.5m/s = 50 pwm [Hz]
-    angle_pwm_X = data.angular.z * 100 # 0.5m/s = 50 pwm [Hz]
-
-    print("linear_pwm_X : ", linear_pwm_X)
     car = YB_Pcb_Car()
 
-    # Car_Run 
-    car.Car_Run(linear_pwm_X, linear_pwm_X) 
+    linear_pwm_X = data.linear.x * 100 # 0.5m/s = 50 pwm [Hz]
+    angle_pwm = data.angular.z*360/(2*PI)
+
+    if linear_pwm_X <= 30 and linear_pwm_X >= 10:
+        linear_pwm_X = 30
+
+    
+
+    if angle_pwm <= 180 and angle_pwm >= 0 :
+        angle_pwm = 50
+        car.Car_Right(angle_pwm, 0)
+        time.sleep(2)
+        car.Car_Stop()
+
+        print(angle_pwm)
+
+    if angle_pwm >= 180 and angle_pwm <= 360 :
+        angle_pwm = 50
+        car.Car_Left(angle_pwm, 0)
+        time.sleep(2)
+        car.Car_Stop()
+
+
+        print(angle_pwm)
+    
+    print("linear_pwm_X")
+    print(linear_pwm_X)
+    car.Car_Run(linear_pwm_X, linear_pwm_X)
+    time.sleep(2)
     car.Car_Stop()
+    
+    
+    
+
+    # Car_Run 
+    # car.Car_Run(linear_pwm_X, linear_pwm_X)
+    # time.sleep(2)
+    # car.Car_Stop()
 
     # Car_Back
     #car.Car_Back(150, 150) 
@@ -135,14 +168,11 @@ def subscribe_topic_message(data):
     #car.Car_Stop()
 
     # Car_left
-    #car.Car_Left(0, 150)
-    #time.sleep(2)
-    #car.Car_Stop()
+    # car.Car_Left(0, angle_pwm_X)
+    # time.sleep(2)
+    # car.Car_Stop()
 
     # Car_Right
-    #car.Car_Right(150, 0)
-    #time.sleep(2)
-    #car.Car_Stop()
 
     # Car_Spin_Left
     #car.Car_Spin_Left(150, 150)
