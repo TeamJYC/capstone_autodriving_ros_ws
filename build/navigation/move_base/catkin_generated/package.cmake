@@ -1,5 +1,5 @@
 set(_CATKIN_CURRENT_PACKAGE "move_base")
-set(move_base_VERSION "1.17.1")
+set(move_base_VERSION "1.16.7")
 set(move_base_MAINTAINER "David V. Lu!! <davidvlu@gmail.com>, Michael Ferguson <mfergs7@gmail.com>, Aaron Hoy <ahoy@fetchrobotics.com>")
 set(move_base_PACKAGE_FORMAT "2")
 set(move_base_BUILD_DEPENDS "cmake_modules" "message_generation" "tf2_geometry_msgs" "actionlib" "costmap_2d" "dynamic_reconfigure" "geometry_msgs" "move_base_msgs" "nav_core" "nav_msgs" "pluginlib" "roscpp" "rospy" "std_srvs" "tf2_ros" "visualization_msgs" "base_local_planner" "clear_costmap_recovery" "navfn" "rotate_recovery")

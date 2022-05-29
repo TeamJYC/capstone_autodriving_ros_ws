@@ -5,7 +5,7 @@ Reads and maintains the following parameters on the ROS server
 - \b "~min_particles" : \b [int] Minimum allowed number of particles. min: 0, default: 100, max: 1000
 - \b "~max_particles" : \b [int] Mamimum allowed number of particles. min: 0, default: 5000, max: 10000
 - \b "~kld_err" : \b [double] Maximum error between the true distribution and the estimated distribution. min: 0.0, default: 0.01, max: 1.0
-- \b "~kld_z" : \b [double] Upper standard normal quantile for (1 - p), where p is the probability that the error on the estimated distribution will be less than kld_err. min: 0.0, default: 0.99, max: 1.0
+- \b "~kld_z" : \b [double] Upper standard normal quantile for (1 - p), where p is the probability that the error on the estimated distrubition will be less than kld_err. min: 0.0, default: 0.99, max: 1.0
 - \b "~update_min_d" : \b [double] Translational movement required before performing a filter update. min: 0.0, default: 0.2, max: 5.0
 - \b "~update_min_a" : \b [double] Rotational movement required before performing a filter update. min: 0.0, default: 0.523598775598, max: 6.28318530718
 - \b "~resample_interval" : \b [int] Number of filter updates required before resampling. min: 0, default: 2, max: 20

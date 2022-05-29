@@ -1,5 +1,5 @@
 set(_CATKIN_CURRENT_PACKAGE "clear_costmap_recovery")
-set(clear_costmap_recovery_VERSION "1.17.1")
+set(clear_costmap_recovery_VERSION "1.16.7")
 set(clear_costmap_recovery_MAINTAINER "David V. Lu!! <davidvlu@gmail.com>, Michael Ferguson <mfergs7@gmail.com>, Aaron Hoy <ahoy@fetchrobotics.com>")
 set(clear_costmap_recovery_PACKAGE_FORMAT "2")
 set(clear_costmap_recovery_BUILD_DEPENDS "cmake_modules" "costmap_2d" "eigen" "nav_core" "pluginlib" "roscpp" "tf2_ros")

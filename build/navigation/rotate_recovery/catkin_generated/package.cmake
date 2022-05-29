@@ -1,5 +1,5 @@
 set(_CATKIN_CURRENT_PACKAGE "rotate_recovery")
-set(rotate_recovery_VERSION "1.17.1")
+set(rotate_recovery_VERSION "1.16.7")
 set(rotate_recovery_MAINTAINER "David V. Lu!! <davidvlu@gmail.com>, Michael Ferguson <mfergs7@gmail.com>, Aaron Hoy <ahoy@fetchrobotics.com>")
 set(rotate_recovery_PACKAGE_FORMAT "2")
 set(rotate_recovery_BUILD_DEPENDS "angles" "base_local_planner" "cmake_modules" "costmap_2d" "eigen" "geometry_msgs" "nav_core" "pluginlib" "roscpp" "tf2" "tf2_geometry_msgs" "tf2_ros")

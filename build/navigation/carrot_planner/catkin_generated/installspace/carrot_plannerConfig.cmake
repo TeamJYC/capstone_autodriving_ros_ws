@@ -185,7 +185,7 @@ foreach(t ${carrot_planner_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "angles;base_local_planner;costmap_2d;nav_core;pluginlib;roscpp;tf2;tf2_ros")
+set(depends "base_local_planner;costmap_2d;nav_core;pluginlib;roscpp;tf2;tf2_ros")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

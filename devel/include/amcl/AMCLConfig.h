@@ -579,9 +579,9 @@ AMCLConfig::GroupDescription<AMCLConfig::DEFAULT, AMCLConfig> Default("Default",
 //#line 291 "/opt/ros/melodic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.kld_z = 0.99;
 //#line 291 "/opt/ros/melodic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
-      Default.abstract_parameters.push_back(AMCLConfig::AbstractParamDescriptionConstPtr(new AMCLConfig::ParamDescription<double>("kld_z", "double", 0, "Upper standard normal quantile for (1 - p), where p is the probability that the error on the estimated distribution will be less than kld_err.", "", &AMCLConfig::kld_z)));
+      Default.abstract_parameters.push_back(AMCLConfig::AbstractParamDescriptionConstPtr(new AMCLConfig::ParamDescription<double>("kld_z", "double", 0, "Upper standard normal quantile for (1 - p), where p is the probability that the error on the estimated distrubition will be less than kld_err.", "", &AMCLConfig::kld_z)));
 //#line 291 "/opt/ros/melodic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
-      __param_descriptions__.push_back(AMCLConfig::AbstractParamDescriptionConstPtr(new AMCLConfig::ParamDescription<double>("kld_z", "double", 0, "Upper standard normal quantile for (1 - p), where p is the probability that the error on the estimated distribution will be less than kld_err.", "", &AMCLConfig::kld_z)));
+      __param_descriptions__.push_back(AMCLConfig::AbstractParamDescriptionConstPtr(new AMCLConfig::ParamDescription<double>("kld_z", "double", 0, "Upper standard normal quantile for (1 - p), where p is the probability that the error on the estimated distrubition will be less than kld_err.", "", &AMCLConfig::kld_z)));
 //#line 291 "/opt/ros/melodic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.update_min_d = 0.0;
 //#line 291 "/opt/ros/melodic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"

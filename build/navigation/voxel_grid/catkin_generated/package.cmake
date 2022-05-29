@@ -1,5 +1,5 @@
 set(_CATKIN_CURRENT_PACKAGE "voxel_grid")
-set(voxel_grid_VERSION "1.17.1")
+set(voxel_grid_VERSION "1.16.7")
 set(voxel_grid_MAINTAINER "David V. Lu!! <davidvlu@gmail.com>, Michael Ferguson <mfergs7@gmail.com>, Aaron Hoy <ahoy@fetchrobotics.com>")
 set(voxel_grid_PACKAGE_FORMAT "2")
 set(voxel_grid_BUILD_DEPENDS "roscpp")

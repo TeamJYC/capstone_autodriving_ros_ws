@@ -5,4 +5,4 @@ PROJECT_CATKIN_DEPENDS = "dynamic_reconfigure;geometry_msgs;laser_geometry;map_m
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-lcostmap_2d;-llayers;/usr/lib/aarch64-linux-gnu/libboost_system.so;/usr/lib/aarch64-linux-gnu/libboost_thread.so;/usr/lib/aarch64-linux-gnu/libboost_chrono.so;/usr/lib/aarch64-linux-gnu/libboost_date_time.so;/usr/lib/aarch64-linux-gnu/libboost_atomic.so;/usr/lib/aarch64-linux-gnu/libpthread.so".split(';') if "-lcostmap_2d;-llayers;/usr/lib/aarch64-linux-gnu/libboost_system.so;/usr/lib/aarch64-linux-gnu/libboost_thread.so;/usr/lib/aarch64-linux-gnu/libboost_chrono.so;/usr/lib/aarch64-linux-gnu/libboost_date_time.so;/usr/lib/aarch64-linux-gnu/libboost_atomic.so;/usr/lib/aarch64-linux-gnu/libpthread.so" != "" else []
 PROJECT_NAME = "costmap_2d"
 PROJECT_SPACE_DIR = "/home/ubuntu/catkin_ws/install"
-PROJECT_VERSION = "1.17.1"
+PROJECT_VERSION = "1.16.7"

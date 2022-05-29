@@ -5,4 +5,4 @@ PROJECT_CATKIN_DEPENDS = "diagnostic_updater;dynamic_reconfigure;geometry_msgs;n
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-lamcl_sensors;-lamcl_map;-lamcl_pf".split(';') if "-lamcl_sensors;-lamcl_map;-lamcl_pf" != "" else []
 PROJECT_NAME = "amcl"
 PROJECT_SPACE_DIR = "/home/ubuntu/catkin_ws/install"
-PROJECT_VERSION = "1.17.1"
+PROJECT_VERSION = "1.16.7"

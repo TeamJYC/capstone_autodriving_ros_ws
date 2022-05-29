@@ -1,5 +1,5 @@
 set(_CATKIN_CURRENT_PACKAGE "dwa_local_planner")
-set(dwa_local_planner_VERSION "1.17.1")
+set(dwa_local_planner_VERSION "1.16.7")
 set(dwa_local_planner_MAINTAINER "David V. Lu!! <davidvlu@gmail.com>, Michael Ferguson <mfergs7@gmail.com>, Aaron Hoy <ahoy@fetchrobotics.com>")
 set(dwa_local_planner_PACKAGE_FORMAT "2")
 set(dwa_local_planner_BUILD_DEPENDS "angles" "cmake_modules" "base_local_planner" "costmap_2d" "dynamic_reconfigure" "eigen" "nav_core" "nav_msgs" "pluginlib" "sensor_msgs" "roscpp" "tf2" "tf2_geometry_msgs" "tf2_ros")

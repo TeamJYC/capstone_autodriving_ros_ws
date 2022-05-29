@@ -5,4 +5,4 @@ PROJECT_CATKIN_DEPENDS = "angles;costmap_2d;dynamic_reconfigure;geometry_msgs;me
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-lbase_local_planner;-ltrajectory_planner_ros".split(';') if "-lbase_local_planner;-ltrajectory_planner_ros" != "" else []
 PROJECT_NAME = "base_local_planner"
 PROJECT_SPACE_DIR = "/home/ubuntu/catkin_ws/devel"
-PROJECT_VERSION = "1.17.1"
+PROJECT_VERSION = "1.16.7"

@@ -5,4 +5,4 @@ PROJECT_CATKIN_DEPENDS = "base_local_planner;dynamic_reconfigure;nav_msgs;plugin
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-ldwa_local_planner".split(';') if "-ldwa_local_planner" != "" else []
 PROJECT_NAME = "dwa_local_planner"
 PROJECT_SPACE_DIR = "/home/ubuntu/catkin_ws/install"
-PROJECT_VERSION = "1.17.1"
+PROJECT_VERSION = "1.16.7"

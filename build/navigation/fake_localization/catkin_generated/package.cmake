@@ -1,5 +1,5 @@
 set(_CATKIN_CURRENT_PACKAGE "fake_localization")
-set(fake_localization_VERSION "1.17.1")
+set(fake_localization_VERSION "1.16.7")
 set(fake_localization_MAINTAINER "David V. Lu!! <davidvlu@gmail.com>, Michael Ferguson <mfergs7@gmail.com>, Aaron Hoy <ahoy@fetchrobotics.com>")
 set(fake_localization_PACKAGE_FORMAT "2")
 set(fake_localization_BUILD_DEPENDS "angles" "tf2_geometry_msgs" "geometry_msgs" "message_filters" "nav_msgs" "rosconsole" "roscpp" "rospy" "tf2_ros")

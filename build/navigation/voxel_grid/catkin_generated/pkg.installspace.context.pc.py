@@ -5,4 +5,4 @@ PROJECT_CATKIN_DEPENDS = "roscpp".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-lvoxel_grid".split(';') if "-lvoxel_grid" != "" else []
 PROJECT_NAME = "voxel_grid"
 PROJECT_SPACE_DIR = "/home/ubuntu/catkin_ws/install"
-PROJECT_VERSION = "1.17.1"
+PROJECT_VERSION = "1.16.7"

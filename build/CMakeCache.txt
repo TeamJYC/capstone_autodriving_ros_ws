@@ -89,6 +89,18 @@ Boost_LIBRARY_DIR_DEBUG:PATH=/usr/lib/aarch64-linux-gnu
 //Boost library directory RELEASE
 Boost_LIBRARY_DIR_RELEASE:PATH=/usr/lib/aarch64-linux-gnu
 
+//Boost python-py36 library (debug)
+Boost_PYTHON-PY36_LIBRARY_DEBUG:FILEPATH=/usr/lib/aarch64-linux-gnu/libboost_python-py36.so
+
+//Boost python-py36 library (release)
+Boost_PYTHON-PY36_LIBRARY_RELEASE:FILEPATH=/usr/lib/aarch64-linux-gnu/libboost_python-py36.so
+
+//Boost python3 library (debug)
+Boost_PYTHON3_LIBRARY_DEBUG:FILEPATH=/usr/lib/aarch64-linux-gnu/libboost_python3.so
+
+//Boost python3 library (release)
+Boost_PYTHON3_LIBRARY_RELEASE:FILEPATH=/usr/lib/aarch64-linux-gnu/libboost_python3.so
+
 //Boost system library (debug)
 Boost_SYSTEM_LIBRARY_DEBUG:FILEPATH=/usr/lib/aarch64-linux-gnu/libboost_system.so
 
@@ -333,6 +345,12 @@ LSB_FOUND:BOOL=TRUE
 //Path to a program.
 LSB_RELEASE_EXECUTABLE:FILEPATH=/usr/bin/lsb_release
 
+//Value Computed by CMake
+LibBot_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws/build/LibBot
+
+//Value Computed by CMake
+LibBot_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws/src/LibBot
+
 //The directory containing a CMake configuration file for MRPT.
 MRPT_DIR:PATH=/usr/share/mrpt
 
@@ -365,6 +383,9 @@ OPENGL_opengl_LIBRARY:FILEPATH=/usr/lib/aarch64-linux-gnu/libOpenGL.so
 
 //Path to a file.
 OPENGL_xmesa_INCLUDE_DIR:PATH=OPENGL_xmesa_INCLUDE_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for OpenCV.
+OpenCV_DIR:PATH=/usr/share/OpenCV
 
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
@@ -595,7 +616,7 @@ X11_xf86misc_INCLUDE_PATH:PATH=X11_xf86misc_INCLUDE_PATH-NOTFOUND
 X11_xf86vmode_INCLUDE_PATH:PATH=/usr/include
 
 //Path to a file.
-_file_name:FILEPATH=/home/ubuntu/catkin_ws/src/slam_gmapping/gmapping/test/basic_localization_laser_different_beamcount.test
+_file_name:FILEPATH=/home/ubuntu/catkin_ws/src/navigation/clear_costmap_recovery/test/clear_tests.launch
 
 //Path to a file.
 _gmock_INCLUDES:FILEPATH=/usr/include/gmock/gmock.h
@@ -650,6 +671,9 @@ bond_DIR:PATH=/opt/ros/melodic/share/bond/cmake
 
 //The directory containing a CMake configuration file for bondcpp.
 bondcpp_DIR:PATH=/opt/ros/melodic/share/bondcpp/cmake
+
+//The directory containing a CMake configuration file for boost_python3.
+boost_python3_DIR:PATH=boost_python3_DIR-NOTFOUND
 
 //Value Computed by CMake
 carrot_planner_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws/build/navigation/carrot_planner
@@ -808,6 +832,9 @@ gtest_hide_internal_symbols:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
+//The directory containing a CMake configuration file for image_transport.
+image_transport_DIR:PATH=/opt/ros/melodic/share/image_transport/cmake
+
 //The directory containing a CMake configuration file for laser_geometry.
 laser_geometry_DIR:PATH=/opt/ros/melodic/share/laser_geometry/cmake
 
@@ -815,7 +842,13 @@ laser_geometry_DIR:PATH=/opt/ros/melodic/share/laser_geometry/cmake
 layers_LIB_DEPENDS:STATIC=general;costmap_2d;
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/melodic/lib/libroscpp_serialization.so
+lib:FILEPATH=/opt/ros/melodic/lib/libxmlrpcpp.so
+
+//Value Computed by CMake
+libbot_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws/build/libbot
+
+//Value Computed by CMake
+libbot_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws/src/libbot
 
 //The directory containing a CMake configuration file for map_msgs.
 map_msgs_DIR:PATH=/opt/ros/melodic/share/map_msgs/cmake
@@ -1093,6 +1126,14 @@ Boost_INCLUDE_DIR-ADVANCED:INTERNAL=1
 Boost_LIBRARY_DIR_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_LIBRARY_DIR_RELEASE
 Boost_LIBRARY_DIR_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_PYTHON-PY36_LIBRARY_DEBUG
+Boost_PYTHON-PY36_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_PYTHON-PY36_LIBRARY_RELEASE
+Boost_PYTHON-PY36_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_PYTHON3_LIBRARY_DEBUG
+Boost_PYTHON3_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_PYTHON3_LIBRARY_RELEASE
+Boost_PYTHON3_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_SYSTEM_LIBRARY_DEBUG
 Boost_SYSTEM_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_SYSTEM_LIBRARY_RELEASE
@@ -1216,7 +1257,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=22
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -1265,6 +1306,8 @@ FIND_PACKAGE_MESSAGE_DETAILS_Bullet:INTERNAL=[/usr/lib/aarch64-linux-gnu/libBull
 FIND_PACKAGE_MESSAGE_DETAILS_Eigen:INTERNAL=[/usr/include/eigen3][v()]
 //Details about finding FLTK
 FIND_PACKAGE_MESSAGE_DETAILS_FLTK:INTERNAL=[fltk_gl;/usr/lib/aarch64-linux-gnu/libGL.so;fltk][/usr/lib/fltk;/usr/include][v()]
+//Details about finding OpenCV
+FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/usr][v3.2.0()]
 //Details about finding OpenGL
 FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/usr/lib/aarch64-linux-gnu/libOpenGL.so][/usr/lib/aarch64-linux-gnu/libGLX.so][/usr/include][c ][v()]
 //Details about finding PkgConfig
@@ -1536,7 +1579,7 @@ YAMLCPP_yaml-cpp_LIBDIR:INTERNAL=
 YAMLCPP_yaml-cpp_PREFIX:INTERNAL=
 YAMLCPP_yaml-cpp_VERSION:INTERNAL=
 //Components requested for this build tree.
-_Boost_COMPONENTS_SEARCHED:INTERNAL=atomic;chrono;date_time;filesystem;system;thread
+_Boost_COMPONENTS_SEARCHED:INTERNAL=atomic;chrono;date_time;filesystem;python-py36;python3;system;thread
 //Last used Boost_INCLUDE_DIR value.
 _Boost_INCLUDE_DIR_LAST:INTERNAL=/usr/include
 //Last used Boost_LIBRARY_DIR_DEBUG value.
@@ -1548,7 +1591,7 @@ _Boost_NAMESPACE_LAST:INTERNAL=boost
 //Last used Boost_USE_MULTITHREADED value.
 _Boost_USE_MULTITHREADED_LAST:INTERNAL=TRUE
 __pkg_config_arguments_PC_EIGEN:INTERNAL=eigen3
-__pkg_config_arguments_YAMLCPP:INTERNAL=yaml-cpp;QUIET
+__pkg_config_arguments_YAMLCPP:INTERNAL=yaml-cpp;REQUIRED
 __pkg_config_checked_PC_EIGEN:INTERNAL=1
 __pkg_config_checked_YAMLCPP:INTERNAL=1
 prefix_result:INTERNAL=

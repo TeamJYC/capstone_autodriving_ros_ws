@@ -136,35 +136,6 @@ rtest_EXTERNAL_OBJECTS =
 /home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /usr/lib/aarch64-linux-gnu/libboost_atomic.so
 /home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /usr/lib/aarch64-linux-gnu/libpthread.so
 /home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /usr/lib/aarch64-linux-gnu/libconsole_bridge.so.0.4
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /opt/ros/melodic/lib/libroslib.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /opt/ros/melodic/lib/librospack.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /usr/lib/aarch64-linux-gnu/libpython2.7.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /usr/lib/aarch64-linux-gnu/libboost_filesystem.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /usr/lib/aarch64-linux-gnu/libboost_program_options.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /usr/lib/aarch64-linux-gnu/libboost_system.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /usr/lib/aarch64-linux-gnu/libtinyxml2.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /usr/lib/aarch64-linux-gnu/libboost_filesystem.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /opt/ros/melodic/lib/librosconsole.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /opt/ros/melodic/lib/librosconsole_log4cxx.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /opt/ros/melodic/lib/librosconsole_backend_interface.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /usr/lib/aarch64-linux-gnu/liblog4cxx.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /usr/lib/aarch64-linux-gnu/libboost_regex.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /opt/ros/melodic/lib/libxmlrpcpp.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /opt/ros/melodic/lib/libtf2.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /opt/ros/melodic/lib/libroscpp_serialization.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /opt/ros/melodic/lib/librostime.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /opt/ros/melodic/lib/libcpp_common.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /usr/lib/aarch64-linux-gnu/libboost_thread.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /usr/lib/aarch64-linux-gnu/libboost_chrono.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /usr/lib/aarch64-linux-gnu/libboost_date_time.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /usr/lib/aarch64-linux-gnu/libboost_atomic.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /usr/lib/aarch64-linux-gnu/libpthread.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /usr/lib/aarch64-linux-gnu/libconsole_bridge.so.0.4
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /opt/ros/melodic/lib/libroslib.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /opt/ros/melodic/lib/librospack.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /usr/lib/aarch64-linux-gnu/libpython2.7.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /usr/lib/aarch64-linux-gnu/libboost_program_options.so
-/home/ubuntu/catkin_ws/devel/lib/map_server/rtest: /usr/lib/aarch64-linux-gnu/libtinyxml2.so
 /home/ubuntu/catkin_ws/devel/lib/map_server/rtest: navigation/map_server/CMakeFiles/rtest.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/ubuntu/catkin_ws/devel/lib/map_server/rtest"
 	cd /home/ubuntu/catkin_ws/build/navigation/map_server && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rtest.dir/link.txt --verbose=$(VERBOSE)

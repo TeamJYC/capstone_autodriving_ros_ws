@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(move_base_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "include;/usr/include/eigen3 " STREQUAL " ")
+if(NOT "include " STREQUAL " ")
   set(move_base_INCLUDE_DIRS "")
-  set(_include_dirs "include;/usr/include/eigen3")
+  set(_include_dirs "include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://wiki.ros.org/move_base " STREQUAL " ")
@@ -116,7 +116,7 @@ if(NOT "include;/usr/include/eigen3 " STREQUAL " ")
   endforeach()
 endif()
 
-set(libraries "move_base")
+set(libraries "")
 foreach(library ${libraries})
   # keep build configuration keywords, target names and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")

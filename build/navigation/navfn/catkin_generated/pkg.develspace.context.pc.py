@@ -5,4 +5,4 @@ PROJECT_CATKIN_DEPENDS = "geometry_msgs;message_runtime;nav_core;nav_msgs;plugin
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-lnavfn".split(';') if "-lnavfn" != "" else []
 PROJECT_NAME = "navfn"
 PROJECT_SPACE_DIR = "/home/ubuntu/catkin_ws/devel"
-PROJECT_VERSION = "1.17.1"
+PROJECT_VERSION = "1.16.7"

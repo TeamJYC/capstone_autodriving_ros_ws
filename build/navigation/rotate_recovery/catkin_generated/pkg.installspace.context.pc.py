@@ -5,4 +5,4 @@ PROJECT_CATKIN_DEPENDS = "costmap_2d;geometry_msgs;nav_core;pluginlib;roscpp;tf2
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-lrotate_recovery".split(';') if "-lrotate_recovery" != "" else []
 PROJECT_NAME = "rotate_recovery"
 PROJECT_SPACE_DIR = "/home/ubuntu/catkin_ws/install"
-PROJECT_VERSION = "1.17.1"
+PROJECT_VERSION = "1.16.7"

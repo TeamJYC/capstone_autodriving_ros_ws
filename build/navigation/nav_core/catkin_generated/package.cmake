@@ -1,5 +1,5 @@
 set(_CATKIN_CURRENT_PACKAGE "nav_core")
-set(nav_core_VERSION "1.17.1")
+set(nav_core_VERSION "1.16.7")
 set(nav_core_MAINTAINER "David V. Lu!! <davidvlu@gmail.com>, Michael Ferguson <mfergs7@gmail.com>, Aaron Hoy <ahoy@fetchrobotics.com>")
 set(nav_core_PACKAGE_FORMAT "2")
 set(nav_core_BUILD_DEPENDS "costmap_2d" "geometry_msgs" "std_msgs" "tf2_ros")

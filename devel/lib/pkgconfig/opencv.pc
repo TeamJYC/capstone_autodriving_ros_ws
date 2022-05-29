@@ -3,6 +3,6 @@ prefix=/home/ubuntu/catkin_ws/devel
 Name: opencv
 Description: Description of opencv
 Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
+Cflags: -I/home/ubuntu/catkin_ws/src/opencv/include
+Libs: -L${prefix}/lib -lopencv
+Requires: cv_bridge opencv2 roscpp rospy sensor_msgs std_msgs
