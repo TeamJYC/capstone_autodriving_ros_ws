@@ -31,7 +31,7 @@
     <rosparam file="$(find willcar)/launch/local_costmap_params.yaml" command="load" />
     <rosparam file="$(find willcar)/launch/global_costmap_params.yaml" command="load" />
     
-    <rosparam file="$(find willcar)/launch/base_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find willcar)/launch/dwa_local_planner_params.yaml" command="load" />
 
     <rosparam file="$(find willcar)/launch/move_base_params.yaml" command="load" />
     <remap from="cmd_vel" to="$(arg cmd_vel_topic)"/>

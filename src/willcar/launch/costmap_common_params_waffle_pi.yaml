@@ -10,4 +10,4 @@ cost_scaling_factor: 2.57
 map_type: costmap
 observation_sources: scan
 track_unknown_space: true
-scan: {sensor_frame: base_link, data_type: LaserScan, topic: scan, marking: true, clearing: true}
+scan: {sensor_frame: base_footprint, data_type: LaserScan, topic: scan, marking: true, clearing: true}
