@@ -11,7 +11,7 @@
     <param name="verbose" value="true" />                       # verbose
   </node>
   
-  <node name="cmd_vel_node" pkg="willcar" type="cmd_vel_node" output="screen"> 
+  <node name="cmd_vel" pkg="willcar" type="cmd_vel.py" output="screen"/> 
 
   <node name="ydlidar_node"  pkg="ydlidar"  type="ydlidar_node" output="screen" respawn="false" >
     <param name="port"         type="string" value="/dev/ttyUSB0"/>  
