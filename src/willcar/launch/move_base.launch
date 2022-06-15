@@ -3,8 +3,6 @@
  <!-- Run the map server --> 
  <node name="map_server" pkg="map_server" type="map_server" args="$(find willcar)/map_resource/test2.yaml"/> 
 
- <!-- Run the cmd_vel_node --> 
-<node name="cmd_vel_node" pkg="willcar" type="cmd_vel_node" args="$(find willcar)/scripts/cmd_vel.py"/> 
 
   <!-- AMCL -->
   <include file="$(find amcl)/examples/amcl_diff.launch" />
