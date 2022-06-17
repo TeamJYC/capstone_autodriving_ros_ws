@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 
+from termios import VSWTCH
 import rospy
 import smbus
 import math
+from math import sin, cos, pi
 import time
 import tf
 
@@ -56,11 +58,12 @@ def listener():
     register_accel_zout_h = 0x3F
 
     pos_x = 0.0
-    pos_y = 0.0 
+    pos_y = 0.0
+    pos_th = 0.0
 
-    vX = 0.0
-    vY = 0.0
-    rZ = 0.0
+    vX = 0.1
+    vY = -0.1
+    vth = 0.1
 
     PI = 3.14
 
@@ -81,6 +84,17 @@ def listener():
     
             x = read_data(register_accel_xout_h)/16384.0
             y = read_data(register_accel_yout_h)/16384.0
+
+            gyro_x = read_data(register_gyro_xout_h)
+            gyro_y = read_data(register_gyro_yout_h)
+            gyro_z = read_data(register_gyro_zout_h)
+            vth = vth + (PI*(gyro_dps(gyro_z)*dt)/180)
+
+            print(vth)
+
+            gyro_x_ = gyro_x_ + gyro_x  
+            gyro_y_ = gyro_y_ + gyro_y  
+            gyro_z_ = gyro_z_ + gyro_z  
         
 
             rospy.loginfo(x)
@@ -88,31 +102,15 @@ def listener():
             rospy.loginfo(vX)
 
             vX = vX + x*dt
-            vY = vY + y*dt
-
-            delta_x = vX * dt
-            delta_y = vY * dt
+            
+            delta_x = (vX * cos(pos_th) - vY * sin(pos_th)) * dt
+            delta_y = (vX * sin(pos_th) + vY * cos(pos_th)) * dt
+            delta_th = vth * dt
 
             pos_x = pos_x + delta_x
             pos_y = pos_y + delta_y
-
-            print("pos_x",pos_x)
-            print("delta_x",delta_x)
-            print("pos_y",pos_y)
-            print("delta_y",delta_y)
-
-            gyro_x = read_data(register_gyro_xout_h)
-            gyro_y = read_data(register_gyro_yout_h)
-            gyro_z = read_data(register_gyro_zout_h)
-            rZ = rZ + (PI*(gyro_dps(gyro_z)*dt)/180)
-
-            print(rZ)
-
-            gyro_x_ = gyro_x_ + gyro_x  
-            gyro_y_ = gyro_y_ + gyro_y  
-            gyro_z_ = gyro_z_ + gyro_z  
-
-
+            th = th + delta_th
+ 
             odom_quat = tf.transformations.quaternion_from_euler(gyro_x_, gyro_y_, gyro_z_)
             current_time = rospy.Time.now()
             
@@ -133,7 +131,7 @@ def listener():
             odom.pose.pose = Pose(Point(pos_x,pos_y,0.), Quaternion(*odom_quat))
 
             odom.child_frame_id = "base_footprint"
-            odom.twist.twist = Twist(Vector3(vX, vY, 0), Vector3(0, 0, rZ))
+            odom.twist.twist = Twist(Vector3(vX, vY, 0), Vector3(0, 0, vth))
 
             odom_pub.publish(odom)
             
