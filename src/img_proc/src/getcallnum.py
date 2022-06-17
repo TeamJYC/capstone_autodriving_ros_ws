@@ -6,7 +6,6 @@ callnum_queue = []
 
 def get_callnum(text):
     count = 0
-    text = text.replace(" ", "")
     for idx, val in enumerate(text): # 리스트 요소 하나씩 접근
         if (ord(val) >= 48 and ord(val) <= 57):
             count += 1

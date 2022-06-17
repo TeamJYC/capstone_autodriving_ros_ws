@@ -33,17 +33,19 @@ class Processor:
         img_warp = perspective.perspective_transformation(img_shape,cv_img)
 
         img_gray2 = cv2.cvtColor(img_warp, cv2.COLOR_BGR2GRAY)
-        kernel = np.array([[1, 1, 1, 1, 1, 1, 1]])
+        kernel = np.ones((1, 25))
         gray_kernel = np.dot(kernel.T, kernel)
         img_graymop = cv2.dilate(img_gray2, gray_kernel, iterations = 1)
         img_sub2 = 255 - cv2.absdiff(img_gray2, img_graymop)
         ret,img_thresh2 = cv2.threshold(img_sub2, 0, 255, cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
-        text_ocr = ocr.tesseract(img_thresh2)
-        hello = "hello ocr %s" %text_ocr
-        time.sleep(1)
+        img_dilate = cv2.dilate(img_thresh2, np.array([[0, 1, 0], [1, 1, 1], [0, 1, 0]], np.uint8), 3)
+        text_ocr = ocr.tesseract(img_dilate)
+        kdc = getcallnum.get_callnum(text_ocr)
+        text_ocr1 = text_ocr + str(kdc)
+        hello = "hello ocr %s" %text_ocr1
+        time.sleep(5)
         rospy.loginfo(hello)
-        
-        msg = self._bridge.cv2_to_imgmsg(img_thresh2,"mono8")
+        msg = self._bridge.cv2_to_imgmsg(img_dilate,"mono8")
         self._pub.publish(msg)
 
 if __name__=="__main__":

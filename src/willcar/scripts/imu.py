@@ -30,10 +30,16 @@ def twocomplements(val) :
     s = Bits(uint=val, length=16)
     return s.int 
 
+def dist(a,b):
+    return math.sqrt((a*a)+(b*b))
+
 def gyro_dps(val) :
     sensitive_gyro = 131.0
     return twocomplements(val)/sensitive_gyro
 
+def get_yaw(x,y,z):
+    radians = math.atan(z/dist(x,y))
+    return radians
 def listener():
     rospy.init_node('imu_node', anonymous=True)
     odom_pub = rospy.Publisher("odom",Odometry, queue_size=50)
@@ -63,18 +69,23 @@ def listener():
     gyro_z_ = 0.0
     
  
-    last = rospy.Time.now()
 
 
-    while not rospy.is_shutdown :
+    while not rospy.is_shutdown() :
+            last = rospy.Time.now()
             current = rospy.Time.now()
 
             dt = (current - last).to_sec()
 
             bus.write_byte_data(DEV_ADDR, 0x6B, 0b00000000)
     
-            x = read_data(register_accel_xout_h)
-            y = read_data(register_accel_yout_h)
+            x = read_data(register_accel_xout_h)/16384.0
+            y = read_data(register_accel_yout_h)/16384.0
+        
+
+            rospy.loginfo(x)
+            rospy.loginfo(dt)
+            rospy.loginfo(vX)
 
             vX = vX + x*dt
             vY = vY + y*dt
@@ -85,10 +96,10 @@ def listener():
             pos_x = pos_x + delta_x
             pos_y = pos_y + delta_y
 
-            print(pos_x)
-            print(delta_x)
-            print(pos_y)
-            print(delta_y)
+            print("pos_x",pos_x)
+            print("delta_x",delta_x)
+            print("pos_y",pos_y)
+            print("delta_y",delta_y)
 
             gyro_x = read_data(register_gyro_xout_h)
             gyro_y = read_data(register_gyro_yout_h)
@@ -102,7 +113,7 @@ def listener():
             gyro_z_ = gyro_z_ + gyro_z  
 
 
-            odom_quat = tf.transformation.quaternion_from_euler(gyro_x_, gyro_y_, gyro_z_)
+            odom_quat = tf.transformations.quaternion_from_euler(gyro_x_, gyro_y_, gyro_z_)
             current_time = rospy.Time.now()
             
 
