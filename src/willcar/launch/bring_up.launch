@@ -2,7 +2,7 @@
 
   <node pkg="rf2o_laser_odometry" type="rf2o_laser_odometry_node" name="rf2o_laser_odometry" output="screen">
     <param name="laser_scan_topic" value="/scan"/>        # topic where the lidar scans are being published
-    <param name="odom_topic" value="/odom_rf2o" />              # topic where tu publish the odometry estimations
+    <param name="odom_topic" value="/odom" />              # topic where tu publish the odometry estimations
     <param name="publish_tf" value="true" />                   # wheter or not to publish the tf::transform (base->odom)
     <param name="base_frame_id" value="/base_footprint"/>            # frame_id (tf) of the mobile robot base. A tf transform from the laser_frame to the base_frame is mandatory
     <param name="odom_frame_id" value="/odom" />                # frame_id (tf) to publish the odometry estimations    
@@ -24,7 +24,7 @@
     <param name="angle_min"    type="double" value="-180" />
     <param name="angle_max"    type="double" value="180" />
     <param name="range_min"    type="double" value="0.1" />
-    <param name="range_max"    type="double" value="16.0" />
+    <param name="range_max"    type="double" value="8.0" />
     <param name="ignore_array" type="string" value="" />
     <param name="samp_rate"    type="int"    value="9"/>
     <param name="frequency"    type="double" value="7"/>
@@ -33,6 +33,6 @@
   <node name="uvc_camera_node"  pkg="uvc_camera"  type="uvc_camera_node" output="screen" respawn="false" />
 
   <node pkg="tf" type="static_transform_publisher" name="base_footprint_to_laser4"
-    args="0.2245 0.0 0.2 0.0 0.0  0.0 base_footprint laser_frame 40" />
+    args="-0.2245 0.0 0.2 0.0 0.0  0.0 base_footprint laser_frame 40" />
 
 </launch>

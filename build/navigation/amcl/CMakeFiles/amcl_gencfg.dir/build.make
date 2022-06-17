@@ -61,7 +61,7 @@ navigation/amcl/CMakeFiles/amcl_gencfg: /home/ubuntu/catkin_ws/devel/lib/python2
 /home/ubuntu/catkin_ws/devel/include/amcl/AMCLConfig.h: /opt/ros/melodic/share/dynamic_reconfigure/templates/ConfigType.py.template
 /home/ubuntu/catkin_ws/devel/include/amcl/AMCLConfig.h: /opt/ros/melodic/share/dynamic_reconfigure/templates/ConfigType.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating dynamic reconfigure files from cfg/AMCL.cfg: /home/ubuntu/catkin_ws/devel/include/amcl/AMCLConfig.h /home/ubuntu/catkin_ws/devel/lib/python2.7/dist-packages/amcl/cfg/AMCLConfig.py"
-	cd /home/ubuntu/catkin_ws/build/navigation/amcl && ../../catkin_generated/env_cached.sh /home/ubuntu/catkin_ws/build/navigation/amcl/setup_custom_pythonpath.sh /home/ubuntu/catkin_ws/src/navigation/amcl/cfg/AMCL.cfg /opt/ros/melodic/share/dynamic_reconfigure/cmake/.. /home/ubuntu/catkin_ws/devel/share/amcl /home/ubuntu/catkin_ws/devel/include/amcl /home/ubuntu/catkin_ws/devel/lib/python2.7/dist-packages/amcl
+	cd /home/ubuntu/catkin_ws/build/navigation/amcl && ../../catkin_generated/env_cached.sh /usr/bin/python2 /home/ubuntu/catkin_ws/src/navigation/amcl/cfg/AMCL.cfg /opt/ros/melodic/share/dynamic_reconfigure/cmake/.. /home/ubuntu/catkin_ws/devel/share/amcl /home/ubuntu/catkin_ws/devel/include/amcl /home/ubuntu/catkin_ws/devel/lib/python2.7/dist-packages/amcl
 
 /home/ubuntu/catkin_ws/devel/share/amcl/docs/AMCLConfig.dox: /home/ubuntu/catkin_ws/devel/include/amcl/AMCLConfig.h
 	@$(CMAKE_COMMAND) -E touch_nocreate /home/ubuntu/catkin_ws/devel/share/amcl/docs/AMCLConfig.dox

@@ -59,14 +59,14 @@ nav_core/base_global_planner.h
 -
 geometry_msgs/PoseStamped.h
 -
+angles/angles.h
+-
 base_local_planner/world_model.h
 -
 base_local_planner/costmap_model.h
 -
 
 /home/ubuntu/catkin_ws/src/navigation/carrot_planner/src/carrot_planner.cpp
-angles/angles.h
--
 carrot_planner/carrot_planner.h
 -
 pluginlib/class_list_macros.h
