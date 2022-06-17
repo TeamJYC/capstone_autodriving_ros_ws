@@ -17,28 +17,7 @@ from geometry_msgs.msg import Point, Pose, Quaternion, Twist, Vector3
 bus = smbus.SMBus(1)
 DEV_ADDR = 0x68
 
-register_gyro_xout_h = 0x43
-register_gyro_yout_h = 0x45
-register_gyro_zout_h = 0x47
 
-sensitive_gyro = 131.0
-
-register_accel_xout_h = 0x3B
-register_accel_yout_h = 0x3D
-register_accel_zout_h = 0x3F
-
-pos_x = 0.0
-pos_y = 0.0 
-
-vX = 0.0
-vY = 0.0
-rZ = 0.0
-
-PI = 3.14
-
-gyro_x_ = 0.0
-gyro_y_ = 0.0
-gyro_z_ = 0.0
 
 
 def read_data(register) : 
@@ -52,41 +31,56 @@ def twocomplements(val) :
     return s.int 
 
 def gyro_dps(val) :
+    sensitive_gyro = 131.0
     return twocomplements(val)/sensitive_gyro
 
 def listener():
     rospy.init_node('imu_node', anonymous=True)
-    
     odom_pub = rospy.Publisher("odom",Odometry, queue_size=50)
     odom_broadcaster = tf.TransformBroadcaster()
 
+
+
+    register_gyro_xout_h = 0x43
+    register_gyro_yout_h = 0x45
+    register_gyro_zout_h = 0x47    
+
+    register_accel_xout_h = 0x3B
+    register_accel_yout_h = 0x3D
+    register_accel_zout_h = 0x3F
+
+    pos_x = 0.0
+    pos_y = 0.0 
+
+    vX = 0.0
+    vY = 0.0
+    rZ = 0.0
+
+    PI = 3.14
+
+    gyro_x_ = 0.0
+    gyro_y_ = 0.0
+    gyro_z_ = 0.0
+    
+ 
     last = rospy.Time.now()
 
 
     while not rospy.is_shutdown :
-            bus.write_byte_data(DEV_ADDR, 0x6B, 0b00000000)
-    
-            x = read_data(register_accel_xout_h)
-            y = read_data(register_accel_yout_h)
-            z = read_data(register_accel_zout_h)
-
             current = rospy.Time.now()
 
             dt = (current - last).to_sec()
 
-            global vX 
-            global vY
+            bus.write_byte_data(DEV_ADDR, 0x6B, 0b00000000)
+    
+            x = read_data(register_accel_xout_h)
+            y = read_data(register_accel_yout_h)
+
             vX = vX + x*dt
             vY = vY + y*dt
 
             delta_x = vX * dt
             delta_y = vY * dt
-
-            global pos_x
-            global pos_y
-
-            global PI
-            global rZ
 
             pos_x = pos_x + delta_x
             pos_y = pos_y + delta_y
@@ -103,18 +97,12 @@ def listener():
 
             print(rZ)
 
-
-            global gyro_x_
-            global gyro_y_
-            global gyro_z_
-
-
             gyro_x_ = gyro_x_ + gyro_x  
             gyro_y_ = gyro_y_ + gyro_y  
             gyro_z_ = gyro_z_ + gyro_z  
 
 
-            odom_quat = tf.transformations.quaternion_from_euler(gyro_x_, gyro_y_, gyro_z_)
+            odom_quat = tf.transformation.quaternion_from_euler(gyro_x_, gyro_y_, gyro_z_)
             current_time = rospy.Time.now()
             
 
